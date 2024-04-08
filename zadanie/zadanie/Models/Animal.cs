@@ -15,8 +15,8 @@ public class Animal
     [Required]
     public string FurColor { get; set; }
     
-    // pole klasy - lista wizyt!!!! obiekty typu wizyta
-
+    public List<Visit> Visits { get; set; }
+    
     public Animal(int id, string name, string category, double weight, string furColor)
     {
         Id = id;
@@ -24,5 +24,16 @@ public class Animal
         Category = category;
         Weight = weight;
         FurColor = furColor;
+        Visits = new List<Visit>();
+    }
+
+    public Animal(int id, string name, string category, double weight, string furColor, List<Visit> visits)
+    {
+        Id = id;
+        Name = name;
+        Category = category;
+        Weight = weight;
+        FurColor = furColor;
+        Visits = visits;
     }
 }
